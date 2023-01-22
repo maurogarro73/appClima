@@ -11,6 +11,13 @@ window.addEventListener('load', () => {
 
   let vientoVelocidad = document.getElementById('vientoVelocidad');
 
+  let tempMin = document.getElementById('tempMin');
+  let tempMax = document.getElementById('tempMax');
+
+  let senTermica = document.getElementById('senTermica');
+
+  let humedad = document.getElementById('humedad');
+
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((posicion) => {
       /* console.log(posicion.coords.latitude, posicion.coords.longitude); */
@@ -38,6 +45,15 @@ window.addEventListener('load', () => {
           ubicacion.textContent = data.name;
 
           vientoVelocidad.textContent = `${data.wind.speed} m/s`;
+
+          tempMin.textContent = `${data.main.temp_min} °C`
+          tempMax.textContent = `${data.main.temp_max} °C`
+
+          senTermica.textContent = `${data.main.feels_like} °C`
+          
+          humedad.textContent = `${data.main.humidity} %`
+
+          console.log(data.main.humidity);
 
           /* Uso de iconos animados */
           switch (data.weather[0].main) {

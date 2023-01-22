@@ -15,11 +15,11 @@ body {
   background: linear-gradient(to right, #b6fbff, #83a4d4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-#contenedor {
-  text-align: center;
+.contenedor {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: auto auto auto;
   grid-gap: 10px;
+  text-align: center;
 }
 
 #caja1,
